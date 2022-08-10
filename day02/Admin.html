@@ -1,0 +1,56 @@
+<html>
+<head>
+
+    <title>
+        Sushi Recipes
+    </title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+    </style>
+    <body>
+        <div class="heading">
+            <h1 style="text-align: center; color:black; font-size:45">Sushi Mushi<h1>
+                <div style="border : 5px outset brown;background-color: lightblue;text-align: center;margin: 5px;padding: 5px;border-radius: 15px 50px;">
+                    <nav style="padding: 10px ;font-style: bold; font:times-serif;flex-wrap: wrap;"; > 
+                        <a href="index.html" >Home</a>
+                        <a href="#">Menu</a>
+                        <a href="#">About us</a>
+                    </nav>
+                    </div>
+            <h2 style="text-align: center">Insert Your New Dishes Here</h2>
+            <br>
+        </div>
+        
+<div style="margin: 20px; padding: 10px;">
+    <input id="inputbox" type="text">
+    <button >Add Items</button>
+</div>
+</body>
+<script>
+
+
+function addItem() {
+        let itemToAdd = document.getElementById('inputbox').value
+        let htmlToAdd = `
+        <div class="item-container">
+            <h3>${itemToAdd}</h3>
+            <button onclick = "removeItem('${itemToAdd}')">Remove</button>
+        </div>`
+
+        let newElement = document.createElement('div')
+        newElement.innerHTML = htmlToAdd
+
+        document.getElementById('container').appendChild(newElement)
+         
+        document.getElementById("container").innerHTML += 
+        <div class="item-container">
+        <div class="title">${itemToAdd}</div>
+        <button onclick = "removeItem('${itemToAdd}')">Remove</button>
+        </div>
+        
+
+    }
+</script>
+</html>
